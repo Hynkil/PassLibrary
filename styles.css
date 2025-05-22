@@ -1,74 +1,99 @@
-/* Alap stílusok */
-body {
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bejelentkezés - PassLibrary</title>
+<style>
+  /* Alap stílusok */
+  body {
     font-family: 'Arial', sans-serif;
     background-color: #f7f7f7;
     margin: 0;
     padding: 0;
-}
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-header {
+  header {
     background-color: #1e1e2f;
     color: white;
     padding: 15px 0;
     text-align: center;
-}
+  }
 
-header .logo {
+  header .logo {
     font-size: 2rem;
     font-weight: bold;
-}
+  }
 
-header .nav-links a {
+  header .nav-links a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
     font-size: 1rem;
-}
+    transition: color 0.2s;
+  }
 
-footer {
+  header .nav-links a:hover {
+    color: #ccc;
+  }
+
+  footer {
     background-color: #1e1e2f;
     color: white;
     text-align: center;
     padding: 15px;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
-}
+  }
 
-main {
+  main {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-}
+    padding: 40px 20px;
+  }
 
-.form-container {
+  .form-container {
     background-color: white;
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     max-width: 400px;
     width: 100%;
-}
+  }
 
-h2 {
+  h2 {
     text-align: center;
     margin-bottom: 20px;
-}
+    font-size: 2rem;
+    color: #1e1e2f;
+  }
 
-form {
+  form {
     display: flex;
     flex-direction: column;
-}
+  }
 
-form input {
+  form input {
     margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
 
-form button {
+  form input:focus {
+    border-color: #1e1e2f;
+    outline: none;
+  }
+
+  form button {
     background-color: #1e1e2f;
     color: white;
     padding: 12px;
@@ -76,33 +101,84 @@ form button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-}
+    transition: background-color 0.3s;
+  }
 
-form button:hover {
+  form button:hover {
     background-color: #333c5a;
-}
+  }
 
-.error {
+  .error {
     color: red;
     font-size: 0.9rem;
     margin-bottom: 10px;
     text-align: center;
-}
+  }
 
-.message {
+  .message {
     color: green;
     font-size: 1rem;
     margin-bottom: 10px;
     text-align: center;
-}
+  }
 
-.forgot-password {
+  .forgot-password {
     text-align: center;
     margin-top: 10px;
-}
+  }
 
-.forgot-password a {
+  .forgot-password a {
     color: #1e1e2f;
     text-decoration: none;
     font-size: 0.9rem;
-}
+  }
+
+  .forgot-password a:hover {
+    text-decoration: underline;
+  }
+
+  /* Reszponzív kialakítás */
+  @media(max-width: 500px) {
+    header .nav-links {
+      margin-top: 10px;
+    }
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">PassLibrary</div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="login.php">Bejelentkezés</a>
+      <a href="register.php">Regisztráció</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="form-container">
+    <h2>Bejelentkezés</h2>
+    <?php if (isset($message)) { echo "<p class='error'>$message</p>"; } ?>
+    <form method="POST" action="">
+      <input type="email" id="email" name="email" placeholder="Email cím" required />
+      <input type="password" id="password" name="password" placeholder="Jelszó" required />
+      <button type="submit">Bejelentkezés</button>
+    </form>
+    <div class="forgot-password">
+      <a href="forgotpassword.php">Elfelejtetted a jelszavad?</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  PassLibrary 2025 © – Minden jog fenntartva
+</footer>
+
+</body>
+</html>
