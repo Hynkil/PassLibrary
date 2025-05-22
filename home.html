@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassLibrary</title>
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1e1e2f;
+            color: white;
+            padding: 15px 30px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #333c5a;
+        }
+
+        main {
+            flex: 1;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        #home {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #1e1e2f;
+        }
+
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .instructions {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .instructions h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .instructions ol {
+            list-style-position: inside;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .instructions ol li {
+            margin-bottom: 8px;
+        }
+
+        #about {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 30px auto;
+            text-align: left;
+        }
+
+        #about h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #1e1e2f;
+        }
+
+        #about p {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        #login-register {
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 30px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        #login-register h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #1e1e2f;
+        }
+
+        #login-register .btn {
+            display: inline-block;
+            background-color: #1e1e2f;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        #login-register .btn:hover {
+            background-color: #333c5a;
+        }
+
+        footer {
+            background-color: #1e1e2f;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links a {
+                width: 100%;
+                text-align: left;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .instructions {
+                padding: 15px;
+            }
+
+            #home {
+                font-size: 2rem;
+            }
+
+            #about {
+                padding: 15px;
+            }
+
+            #login-register {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">PassLibrary</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="login.php">Login</a>
+                <a href="register.php">Register</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <div id="home">
+            <h2>Mi az a PassLibrary?</h2>
+            <p class="intro-text">
+                A PassLibrary egy biztonságos jelszótároló, amely segít tárolni és kezelni a webes fiókjaidhoz tartozó jelszavakat.
+                Mentsd el a jelszavaidat egy helyen, és férj hozzá bárhonnan, amikor szükséges. Biztos lehetsz benne, hogy 
+                minden adat titkosítva és védve van.
+            </p>
+            
+            <div class="instructions">
+                <h3>Hogyan kell feltölteni egy jelszót?</h3>
+                <ol>
+                    <li><strong>Regisztráció:</strong> Először regisztrálj, ha még nem tetted meg.</li>
+                    <li><strong>Jelszó hozzáadása:</strong> Kattints a "Jelszó hozzáadása" gombra a fiók kezelő felületen.</li>
+                    <li><strong>Adatok kitöltése:</strong> Add meg a weboldal nevét, a felhasználónevet és a jelszót, amit szeretnél tárolni.</li>
+                    <li><strong>Mentés:</strong> Kattints a "Mentés" gombra, és a jelszó automatikusan elmentésre kerül biztonságosan.</li>
+                </ol>
+                <p style="font-size: 20px;">Mostantól bármikor hozzáférhetsz a tárolt jelszavaidhoz, és biztos lehetsz benne, hogy azok védve vannak!</p>
+            </div>
+        </div>
+
+
+        <div id="login-register">
+            <h2>Csatlakozz a PassLibrary-hoz!</h2>
+            <a href="login.php" class="btn">Bejelentkezés</a>
+            <a href="register.php" class="btn">Regisztráció</a>
+        </div>
+
+        <div id="about">
+            <h2>Rólunk</h2>
+            <p>A PassLibrary csapata elkötelezett amellett, hogy a legmagasabb szintű biztonságot biztosítsa a felhasználói adatok védelme érdekében. 
+            Fejlesztettünk egy egyszerűen használható jelszótároló rendszert, amely lehetővé teszi, hogy biztonságosan tárold és kezelhesd a webes fiókjaid 
+            jelszavait. A PassLibrary célja, hogy megkönnyítse a mindennapi életet, miközben biztosítja a maximális védelmet a személyes adataid számára. 
+            A rendszerünk titkosítást alkalmaz a tárolt jelszavak védelme érdekében, így biztos lehetsz benne, hogy azok nem kerülnek illetéktelen kezekbe.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        PassLibrary 2025 &copy; – Minden jog fenntartva
+    </footer>
+
+</body>
+</html>
